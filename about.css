@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none !important;;
   }
   
   body {
@@ -17,7 +18,110 @@
     margin: 0 auto;
     padding: 0 20px;
   }
+  /* Navigation */
+.navbar {
+    background: #0d0d2a;
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
+  .brand {
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 15px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    background: #555;
+  }
+  
+  .nav-toggle {
+    display: none;
+  }
+  
+  .nav-toggle-label {
+    display: none;
+    cursor: pointer;
+  }
+  
+  /* Hamburger menu icon */
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 25px;
+    position: relative;
+    transition: 0.3s ease;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: "";
+    position: absolute;
+  }
+  
+  .nav-toggle-label span::before {
+    bottom: 8px;
+  }
+  
+  .nav-toggle-label span::after {
+    top: 8px;
+  }
+  
+  /* Mobile responsive styles */
+  @media screen and (max-width: 768px) {
+    .nav-toggle-label {
+      display: block;
+      padding: 0.5rem;
+    }
+  
+    .nav-links {
+      display: none;
+      width: 100%;
+      background: #0D0D2A  !important;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      flex-direction: column;
+      padding: 0;
+    }
+  
+    .nav-toggle:checked ~ .nav-links {
+      display: flex;
+    }
+  
+    .nav-links li {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .nav-links li a {
+      padding: 1rem;
+      color: white;
+      border-top: 1px solid #444;
+    }
+  }
   /* Hero Section */
   .hero {
     background: linear-gradient(to right, #4f46e5, #3b82f6);
